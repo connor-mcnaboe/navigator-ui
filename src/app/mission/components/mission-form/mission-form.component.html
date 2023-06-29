@@ -1,0 +1,60 @@
+<form [formGroup]="missionForm">
+  <mat-form-field>
+    <input matInput type="number" formControlName="epoch" placeholder="Epoch">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" formControlName="duration" placeholder="Duration">
+  </mat-form-field>
+
+  <div formGroupName="orbit">
+    <div formGroupName="kepler_elements">
+      <mat-form-field>
+        <input matInput type="number" formControlName="semi_major_axis" placeholder="Semi Major Axis">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" formControlName="eccentricity" placeholder="Eccentricity">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" formControlName="inclination" placeholder="Inclination">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" formControlName="longitude_of_ascending_node" placeholder="Longitude of Ascending Node">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" formControlName="argument_of_periapsis" placeholder="Argument of Periapsis">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="number" formControlName="true_anomaly" placeholder="True Anomaly">
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <mat-label>Central Body</mat-label>
+      <mat-select formControlName="central_body">
+        <mat-option *ngFor="let centralBody of centralBodies" [value]="centralBody">{{ centralBody }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Coordinate System</mat-label>
+      <mat-select formControlName="coordinate_system">
+        <mat-option *ngFor="let coordinateSystem of coordinateSystems" [value]="coordinateSystem">{{ coordinateSystem }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>ODE Solver</mat-label>
+      <mat-select formControlName="ode_solver">
+        <mat-option *ngFor="let odeSolver of odeSolvers" [value]="odeSolver">{{ odeSolver }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <button mat-button (click)="submitMission()">Submit</button>
+</form>
