@@ -12,6 +12,7 @@ export class MissionService {
   constructor(private httpClient: HttpClient) { }
 
   postMissionDto(mission: MissionDto): Observable<any> {
+    console.log(mission)
     return this.httpClient.post(
       `${environment.baseUrl}/mission/`,
       mission

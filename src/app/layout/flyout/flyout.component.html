@@ -1,0 +1,12 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="isFlyoutOpen">
+    <app-mission-form></app-mission-form>
+  </mat-sidenav>
+  <button mat-icon-button class="toggle-button" (click)="toggleFlyout()">
+    <mat-icon>{{ isFlyoutOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+  <mat-sidenav-content>
+    <h1>Hi</h1>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -21,3 +21,8 @@ export interface KeplerElementsDto {
    argument_of_periapsis: number,
    true_anomaly: number,
 }
+
+export interface StateVector {
+  position: number[]
+  velocity: number[]
+}
